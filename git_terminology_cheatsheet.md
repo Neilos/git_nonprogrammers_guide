@@ -1,0 +1,18 @@
+## Git terminology cheatsheet
+
+| **Normal English**                             | **Git/Github terminology**    |
+| ---------------------------------------------- | ----------------------------- |
+| a tracked directory                            |  a repository (aka a repo)    |
+| download a directory from github               |  clone repository (aka clone) |
+| a version                                      |  a version                    |
+| save a set of changes and create a new version |  commit changes               |
+| a set of changes that created a version        |  a commit                     |
+| a tag for one or more sets of changes          |  a branch                     |
+| a change proposal                              |  a pull request               |
+| a comment on proposed changes                  |  a comment                    |
+| approve/accept proposed changes                |  merge branch                 |
+| reject proposed changes                        |  close pull request           |
+| sync with github                               |  fetch (aka sync)             |
+| publish/upload to github                       |  push                         |
+| get other people's changes                     |  pull                         |
+
