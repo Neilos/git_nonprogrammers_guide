@@ -4,6 +4,6 @@ This is a guide for non-programmer git novices. Manage your text documents effec
 
 
 1. Intro to git and GitHub
-2. General how tos (including setup of GitHub Desktop)
+2. General how tos
 3. The GitHub Workflow
 4. Git Terminology Cheatsheet
