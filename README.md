@@ -44,40 +44,32 @@ Git was created in 2005 by Linux developers (including the famous Linus Torvalds
 
 ## What is git used for?
 
-Git is most commonly used to track software projects, but it can be used to track changes to almost any electronically stored document or collection of documents. For example, the drafting and redrafting of many books have been managed using git.
+Git is most commonly used to track software projects, but it can be used to track changes to almost any text based documents (or collection of such documents). For example, the drafting and redrafting of books has been helped by using git.
 
 
 ## What is a git repository?
 
-"Git repository" is a term used to refer to a directory (aka folders) that you've asked git to track changes. (Technically the git repository is a hidden sub-folder within the directory, which git uses to track the changes, but in everyday usage this distinction is unimportant.)
+"Git repository" is a term used to refer to a directory (aka folders) you've asked git to track. (Technically the git repository is a hidden sub-folder within the directory, which git uses to track the changes to that directory, but in everyday usage this distinction is unimportant.)
 
-Tracking directories does not change the way you use them.
+Tracking directories does not alter the way you use them.
 
 Git repositories (aka tracked directories) are also sometimes called "repos": short for repositories.
-
-Whenever you want, Git allows you, to save a version of the directory, without cluttering also cluttering it up with lots of extra files.
-
-Git allows you to go back to an old version of the directory whenever you need to.
 
 With git you can:
   * save a version of the directory (without cluttering the directory up with lots of extra files)
   * view the history of changes to files and directories
     - who made exactly what changes
     - when changes were made
+  * revert changes you don't want
 
 
-## Managing versions
 
-version_1 -> version_2 -> version_3
-                 \
-                  ------> my_alternative_version_3
-
-
-## Do I need to use terminal commands or to use git?
+## Do I need to use terminal commands to use git?
 
 No, just use Github and Github Desktop, which are user friendly intefaces to git, the underlying system.
 
 There are numerous advanced things you can only do from the command line in a terminal window, but these are rarely needed by non-developers.
+
 
 
 ## Terminology quick translation
@@ -124,7 +116,15 @@ Through Github, teams of people can
  * formally accept or decline proposed changes
  * apply various restrictions on access to directories (paid accounts only)
 
-(Github even allows you to change text files on its site, but, to keep things simple, you can just continue changing files on your computer the way you normally do).
+(Github even allows you to change text files on its site, but only if you want: you don't have to do this).
+
+
+
+## The Github Workflow
+
+1. Make changes to a repository (aka a git tracked directory)
+2. Create/select a
+
 
 
 ## How to install Github desktop
@@ -136,8 +136,10 @@ Click "Download"
 
 ## How to download an entire repository from Github
 
+Remember that repositories are simply directories tracked by git, and github repositories are just copies of directories, stored on github, and tracked by git.
 
-## Step 1: Select a repository
+
+## Step 1: Select a github repository to download
 
 The git term for downloading a repository from github is "cloning".
 Choose "Clone repository" from the file menu
@@ -155,27 +157,49 @@ Click Clone button
 
 
 
-## How to view github's copy of a repository
+## How to the see the history of changes
 
-### Step 1: view it on github
-
-Select "View it on Github" from the "Repository" menu.
-The github copy of the repository will open in your browser.
+Every time a new version of the directory is stored, git records something called a "commit". Each commit is a record of the changes (i.e. changes to the files) that were associated with the creation of a new version of the directory. You can view the changes associated with each version by examining the history (aka the commit history).
 
 
+### Step 1: Select a label name (aka branch)
 
-## How to label your changes
+Remember that the git term for a label is "branch"
+Remember that changes you store (aka commit) are associated with a label you set up. (Even if you forget to associate them with a label your changes still get labelled with the "master" label).
+Remember also that git's name for labels is "branch".
 
-**IMPORTANT: Do this before you begin committing to any directory changes.**
+Select the label (aka branch) you're interested in from the drop down at the top of the screen.
+
+
+### Step 2: View the history
+
+Select "History" from the "View" menu.
+
+When you first select history, only the most recent change associated with the selected label (aka branch) is shown.
+
+Click the button "View Branch" to see all the earlier changes.
+
+On the left of the screen are the list of commits associated with the selected label (aka branch); newest changes appear at the top.
+
+
+### Step 3: View changes for a commit
+
+Click a commit to see the set of changes included in that commit.
+
+The exact changes included in the selected commit will appear on the right of the screen. Lines that have been removed show in red and lines that have been added show in green.
+
+
+
+## Label your changes
 
 The first thing you should do, before you even commit to any changes, is create a label for your changes.
 
-As you make directory changes you will associate them with this label, and then later the label will be applied to your change proposal that you submit for approval by your colleagues.
+As you store your directory changes you will associate them with this label, and then later that label will be applied to the change proposal that you submit for approval by your colleagues.
 
 In git, the proper term for a label like this is a "branch".
 
 
-### Step 1: Give your label (aka branch) a good name
+### Step 1: Naming your new label (aka branch)
 
 Select "New Branch" from the "File" menu
 
@@ -196,24 +220,48 @@ Click the "Create Branch" button
 Now you've created your label for the set of changes you are intending, the changes you make and any new directory versions created as a result of those changes will automatically be associated with that label/branch. This will be useful later when you come to submit your changes for approval.
 
 
+### Step 4: Publish you label
 
-## How to create a new version (aka making a commit)
-
-Git does not affect the way you save files in a directory. Instead, git adds the capability to store versions of a directory. One of its features, compared to something like a naming convention, is that it does this without cluttering the directory with lots of extra files.
-
-
-### Step 1: Select an appropriate label
-
-Remember that changes you commit to must always be associated with a label (aka a branch.
-
-In the drop down at the top of the screen, select the label (aka branch) with which you want to associate this set of changes.
+Click the "Publish" button in the top right corner of the screen.
 
 
-### Step 2: Review this set of changes
 
-Whenever you make changes to documents (and save those documents as you normally would) git knows that the directory has changed. The left tab button towards the top of the screen indicates that git knows by telling you that there are "uncommitted changes".
+## Make the changes you want
 
-Click the "[X] Uncommited change(s)" tab button.
+
+### Step 1: Sync with Github
+
+Make sure that you're up-to-date with everyone else's changes, by syncing with github. The git term for syncing is "fetching". (Sync regularly to avoid problems that can only be fixed on the command line.)
+
+Click the Sync button.
+
+
+### Step 2: Select your label
+
+Always remember that changes you store in git must always be associated with a label (aka a branch).
+
+In the drop down at the top of the screen, select the label (aka branch) to which you want to associate your changes. It is important that you select the correct label: i.e. the one that corresponds to the directory version you want to make amendments to. If you've just created a label: that one.
+
+
+### Step 3: Get other people's changes
+
+If other people have made any changes using the same label as you're using (aka on the same branch) you should combine their changes with your work by "pulling" in changes.
+
+The select "Pull" from "Repository" menu.
+
+
+### Step 4: Change files as required
+
+Change any files as you would normally, and save them as you would normally.
+
+
+
+## Store changes (aka make a commit) and a new version of the directory
+
+
+### Step 1: Review this current set of changes
+
+Select "Uncommitted changes" from the "View" menu.
 
 On the left of the screen are a list of files that have been changed.
 Select a file, and then, on the right of the screen, are the details of the changes to that file. Lines that have been removed are shown in red and lines that have been added are shown in green.
@@ -221,44 +269,112 @@ Select a file, and then, on the right of the screen, are the details of the chan
 Make sure you're happy with all the changes before carrying on.
 
 
-### Step 3: Commit to the set of changes and store a new directory version
+### Step 2: Store changes (aka make a commit)
 
-To store a new version of the directory, fill in the form at the bottom left of the page.
+The git term for storing a set of changes is "committing the changes". At the same time git stores the changes, a new version of the directory is also stored.
 
-1. Enter a short description of the changes in the "Summary" field. It is best practice to use the *present imperative tense* (e.g. "add such and such", "Make it clear that this is that", "Remove unnecessary lines about such and such")
-2. Enter a longer description in the "description" field. It is best practice to outline the actual reasons for these changes here.
-3. Click the button "Commit to [branch name]".
+Fill in the form at the bottom left of the page to store (aka commit) your changes.
 
-A new version of the directory has now been stored, and the changes made to create the new directory version are also stored in something that git calls a "commit".
+  1. Enter a short description of the changes in the "Summary" field. It is best practice to use the *present imperative tense* (e.g. "add such and such", "Make it clear that this is that", "Remove unnecessary lines about such and such")
+  2. Enter a longer description in the "description" field. It is best practice to outline the actual reasons for these changes here.
+  3. Click the button "Commit to [branch name]".
 
-
-
-## How to view previous changes
-
-Every time a new version of the directory is stored, git records something called a "commit". Each commit is a record of the changes (i.e. changes to the files) that were associated with the creation of a new version of the directory. You can view the changes associated with each version by examining the history (aka the commit history).
-
-
-### Step 1: Select a label name (aka branch)
-
-Remember that changes you commit to are associated with a label you set up. (Even if you forget to associate them with a label your changes still get labelled with the "master" label).
-Remember also that git's name for labels is "branch".
-
-Select the label (aka branch) you're interesting from the drop down at the top of the screen.
-
-
-### Step 2: View the history
-
-Click the "History" tab button.
-On the left of the screen are the list of commits associated with the selected label (aka branch); newest changes appear at the top.
-
-
-### Step 3: View changes for a commit
-
-Click a commit to see the set of changes included in that commit.
-The exact changes included in the selected commit will appear on the right of the screen. Lines that have been removed show in red and lines that have been added show in green.
+The changes you've made are now stored (aka committed), and git has also stored a new version of the directory, which you can return to at a later date if you want.
 
 
 
+## Publish and backup your changes to github
+
+The git term for publishing your changes is "pushing".
+
+Make sure you the right lable (aka branch) is selected.
+Then click the "publish" button in the top left of the screen.
 
 
+
+## Open the repository on GitHub
+
+Select "View on GitHub" from the "Repository"
+The repository will open on github in your browser.
+
+
+
+## Create a change proposal (aka a pull request)
+
+Github allows you to propose changes so that others in your team can review, comment, and either accept or reject.
+
+The github term for a change proposal is a "pull request".
+
+
+### Step 1: Start new pull request
+
+On GitHub click the button "New pull request"
+
+
+### Step 2: Select the label (aka branch)
+
+At the top of the screen in the "compare: master" select box select your label.
+
+
+### Step 3: Review the changes
+
+Scroll down to review the changes: line by line or commit by commit. If you're happy continue.
+
+
+### Step 4: Write a description
+
+Write a description of the changes, including any reasons why you think the changes are necessary.
+
+
+### Step 5: Create pull request
+
+Click the button "Create pull request"
+
+
+
+## Review change proposal (aka pull request)
+
+On GitHub, click the pull requests tab and click the pull request you want to use
+
+See acomments (only still relevant comments) from people on the comments tab.
+
+Review the changes, one commit at a time on the commits tab, or review the changes file by file and line by line on the Files Changes tab.
+
+
+### How to leave inline comments
+
+On Github, on the pull request screen, when reviewing the changes file by file and line by line on the "Files Changed" tab, hover over a line and click the plus(+) sign to add an inline comment about that part of the changes.
+
+
+### How to leave a general comment on all the changes
+
+On Github, on the pull request screen, on the conversation tab fill in the add comment form to add a general comment (e.g. "Looks good to me", "Rubbish. Don't talk to me ever again")
+
+
+### How to make amendments to the change proposal (aka pull request)
+
+The change proposal (aka pull request) is entirely amendable. Just make more commits against the label (aka branch) and publish them and the new changes will show up against the pull request.
+
+Github is even clever enough to hide comments that are made obsolete by subsequently published changes.
+
+
+
+### Approve or reject a change proposal (aka pull request)
+
+When you're sure everyone has finished commenting and adjusting the amendments accordingly you can choose to accept the change or reject it.
+
+
+## How to accept
+
+The GitHub term for accepting a change proposal and incorporating the changes into the master version of the directory is "merging the branch to master".
+
+On Github, on the pull request screen, on the conversation tab click the "Merge pull request" button
+
+
+## How to reject
+
+You can reject a change proposal by closing the pull request
+
+On Github, on the pull request screen, on the conversation tab, click the
+"Close pull request" button to reject the changes.
 
